@@ -1,0 +1,71 @@
+// color
+$color-text: #3d4057;
+$color-primary: #9b52dc;
+$color-primary-hover: lighten($color-primary, 10%);
+$color-secondary: #9b52dc;
+$color-secondary-hover: lighten($color-secondary, 10%);
+$color-dangerous: #ff2626;
+$color-dangerous-hover: lighten($color-dangerous, 10%);
+$color-dark: #000;
+$color-light: #f3f3f3;
+$color-placeholder: #d0d0d0;
+$color-input: #fbfbfb;
+$color-disabled: #f3f3f3;
+$color-error: #f10b34;
+$color-error-light: #ffeaea;
+$color-success: #6fbd15;
+$color-success-hover: lighten($color-success, 10%);
+$color-gray: #bdbdbd;
+// color
+// font
+$font: 'Open Sans';
+$font-poppins: 'Poppins';
+// font
+// text
+$text-font-size: 16px;
+$text-font-family: $font, sans-serif;
+$text-line-height: 1.3;
+$text-font-weigth: 400;
+// text
+// inputs
+$input-height: 52px;
+$input-padding: 24px;
+$input-border-color: #eeebf1;
+$input-border-radius: 12px;
+$input-mb: 30px;
+$textarea-height: 120px;
+// inputs
+$btn-height: 52px;
+// inputs
+// header
+$header-height: 90px;
+// header
+// section
+$section-padding: 30px;
+// section
+// breakpoints
+$xxs: 370;
+$xs: 480;
+$sm: 576;
+$md: 767;
+$lg: 992;
+$xl: 1230;
+$xxl: 1360;
+$xxxl: 1600;
+$xxxxl: 1920;
+// breakpoints
+// z index
+$z-index-popup: 99;
+// z index
+$shadow-light-primary: 0px 0px 21px 0px rgba(0, 113, 188, 0.13);
+$container-max-widths: (
+  //
+  xs: 480px,
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px,
+  // xxl: 1310px,
+  // xxxl: 1560px,
+  // xxxxl: 1870px
+);

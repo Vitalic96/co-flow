@@ -1,0 +1,1 @@
+export const CURRENT_USER_TAG = 'CURRENT_USER_TAG'

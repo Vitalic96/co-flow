@@ -1,0 +1,5 @@
+export { ErrorPage } from './error-page/ErrorPage'
+export { MainPage } from './main-page/MainPage'
+export { NotFoundPage } from './not-found-page/NotFoundPage'
+export { SignInPage } from './sign-in-page/SignInPage'
+export { ProductPage } from './product-page/ProductPage'

@@ -1,0 +1,20 @@
+@import '/src/shared/styles/vars';
+@import '/src/shared/styles/mixin';
+
+.section-title {
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-transform: none;
+  font-family: $font-poppins;
+
+  &--center {
+    text-align: center;
+  }
+
+  + .section-subtitle {
+    margin-top: 10px;
+  }
+}
+
+.section-subtitle {
+}

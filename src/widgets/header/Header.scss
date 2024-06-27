@@ -1,0 +1,83 @@
+@import '/src/shared/styles/vars';
+@import '/src/shared/styles/mixin';
+
+.header {
+  background-color: #fff;
+  z-index: 99;
+  border-bottom: 1px solid #eeeeee;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 40px;
+  padding-right: 40px;
+  border-right: 1px solid #eee;
+
+  &__item {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+  }
+
+  &__link {
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__number {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    line-height: 1;
+    background-color: $color-primary;
+    border-radius: 21px;
+    padding: 4px 10px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 12px;
+  }
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+
+  &__image {
+    margin-right: 16px;
+    position: relative;
+
+    &--status {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #fff;
+      background-color: #4ac264;
+      border-radius: 50%;
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}

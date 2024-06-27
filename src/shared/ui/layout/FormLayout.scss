@@ -1,0 +1,20 @@
+.form-layout {
+  display: flex;
+  background-color: #e0c9f8;
+  height: 100%;
+
+  &__form {
+    width: 55%;
+  }
+
+  &__logo {
+    width: 45%;
+    background-color: #fff;
+    border: 1px solid rgba(238, 238, 238, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    border-radius: 35px;
+  }
+}
