@@ -1,5 +1,5 @@
-import { FormLayout as FormLayout2 } from 'shared/ui'
+import { FormLayout as Layout } from 'shared/ui'
 
 export const FormLayout = () => {
-  return <FormLayout2 />
+  return <Layout />
 }

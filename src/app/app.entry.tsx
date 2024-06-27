@@ -8,7 +8,6 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { setupWorker } from 'msw/browser'
 import { handlers } from './mock/handlers'
 import 'react-toastify/dist/ReactToastify.css'
-import { config } from 'shared/lib'
 
 const root = document.getElementById('root') as HTMLElement
 
@@ -20,10 +19,10 @@ start().then(() => {
   createRoot(root).render(
     <ReduxProvider store={appStore}>
       {/* <ModalProvider> */}
-      {/* <PersistGate loading={null} persistor={persistedStore}> */}
-      <RouterProvider router={appRouter()} />
-      <ToastContainer />
-      {/* </PersistGate> */}
+      <PersistGate loading={null} persistor={persistedStore}>
+        <RouterProvider router={appRouter()} />
+        <ToastContainer />
+      </PersistGate>
       {/* </ModalProvider> */}
     </ReduxProvider>,
   )
