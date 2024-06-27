@@ -5,11 +5,12 @@ import storage from 'redux-persist/lib/storage'
 import { baseApi } from 'shared/api'
 import { rootReducer } from './root.reducer'
 import { invalidateAccessTokenListener } from 'features/session/invalidateAccessToken'
+import { sessionSlice } from 'entities/session'
 
 const persistConfig = {
   key: 'root',
   storage,
-  // whitelist: [sessionSlice.name],
+  whitelist: [sessionSlice.name],
 }
 
 export function makeStore() {

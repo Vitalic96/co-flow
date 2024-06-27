@@ -1,7 +1,6 @@
 import { type ReactNode } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import logo from './logo.png'
-
 import { PATH_PAGE } from 'shared/lib'
 import { Button } from 'shared/ui'
 import { Arrow, Home, Logout, Product } from 'shared/ui/icon'

@@ -1,1 +1,2 @@
 export const CURRENT_USER_TAG = 'CURRENT_USER_TAG'
+export const PRODUCT_TAG = 'PRODUCT_TAG'

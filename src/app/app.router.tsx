@@ -5,6 +5,7 @@ import { BaseLayout } from './layouts/base.layout'
 import { GuestGuard } from './guards/GuestGuard'
 import { AuthGuard } from './guards/AuthGuard'
 import { FormLayout } from './layouts/form.loyout'
+import { ProductListPage } from 'pages/product-list-page/ProductListPage'
 
 export const appRouter = () => {
   return createBrowserRouter([
@@ -21,7 +22,11 @@ export const appRouter = () => {
           element: <MainPage />,
         },
         {
-          path: PATH_PAGE.root,
+          path: PATH_PAGE.products,
+          element: <ProductListPage />,
+        },
+        {
+          path: PATH_PAGE.product,
           element: <ProductPage />,
         },
         { path: PATH_PAGE[404], element: <NotFoundPage /> },

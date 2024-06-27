@@ -17,7 +17,7 @@ export const SectionTitle = (props: Props) => {
       {children && (
         <h2
           className={classNames(
-            'h2 section-title',
+            'h3 section-title',
             { 'section-title--center': center, 'text-white': white },
             className,
           )}

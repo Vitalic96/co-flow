@@ -6,6 +6,8 @@ import { ButtonForm, Form, InputForm, SectionTitle } from 'shared/ui'
 import classNames from 'classnames'
 import { SignUpFormSchema, signUpFormSchema } from '../model/sign-up-form.schema'
 import { signUpThunk } from '../model/sign-up.thunk'
+import { Link } from 'react-router-dom'
+import { PATH_PAGE } from 'shared/lib'
 
 type Props = {
   onComplete?: () => void
@@ -37,7 +39,7 @@ export const SignUpForm = (props: Props) => {
         <Form<SignUpFormSchema>
           onSubmit={onSubmitHandler}
           validationSchema={signUpFormSchema}
-          defaultValues={{ email: 'login1@gmail.com', password: '12345678', passwordConfirm: '12345678' }}
+          // defaultValues={{ email: 'login1@gmail.com', password: '12345678', passwordConfirm: '12345678' }}
           className={classNames('', props.className)}
         >
           <InputForm<SignUpFormSchema> type='text' name='email' label='Email' placeholder='Enter your email' />
@@ -56,9 +58,9 @@ export const SignUpForm = (props: Props) => {
           <ButtonForm width300>Sign up</ButtonForm>
           <div className='form__link'>
             Already have an account?
-            <a onClick={props.onToSignIn} className='text-link text-primary'>
+            <Link to={PATH_PAGE.signIn} className='text-link text-primary'>
               Log In
-            </a>
+            </Link>
           </div>
         </Form>
       )}
