@@ -21,127 +21,17 @@
 @import './components/section';
 // components
 
-@keyframes fadein {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 40px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+.container-fluid {
+  padding: 0 30px;
 }
 
-.layout {
-  &--with-sidebar {
-    padding-left: 340px;
-  }
-}
+.row--m-10 {
+  margin-left: -10px;
+  margin-right: -10px;
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  max-width: 340px;
-  width: 100%;
-  border-right: 1px solid #eeeeee;
-  padding: 24px 30px;
-  display: flex;
-  flex-direction: column;
-  padding-top: $header-height;
-
-  &__logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: $header-height;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    border-bottom: 1px solid #eeeeee;
-    img {
-      max-width: 180px;
-    }
-  }
-
-  &__invite {
-    margin-bottom: 14px;
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-top: 30px;
-    .btn {
-      border-radius: 14px;
-      height: 70px;
-    }
-  }
-
-  &__logout {
-    margin-top: auto;
-  }
-}
-
-.logout-button {
-  &__link {
-    color: $color-dangerous;
-    cursor: pointer;
-  }
-
-  &__icon {
-    display: inline-block;
-    margin-right: 10px;
-    padding: 5px;
-  }
-}
-
-.menu {
-  &__item {
-  }
-  &__link {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    font-weight: 600;
-    padding: 15px 12px;
-    border-radius: 11px;
-    &-icon {
-      margin-right: 10px;
-    }
-
-    &--active {
-      background-color: #eeeeee;
-    }
-  }
-}
-
-.numbers-items {
-  &__item {
-    background: #fbfbfb;
-    border: 1px solid #eeeeee;
-    padding: 30px;
-    border-radius: 20px;
-  }
-
-  &__title {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 12px;
-    font-family: 'Raleway';
-  }
-
-  &__number {
-    font-size: 46px;
-    line-height: 1;
-    color: $color-primary;
-    font-weight: 600;
-    font-family: 'Raleway';
-  }
-
-  &__info {
-    margin-top: 10px;
+  & > .col-12 {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -153,73 +43,15 @@
     cursor: pointer;
     border-radius: 4px;
     font-weight: 600;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    &:hover {
+      background-color: #fff;
+    }
     &--active {
-      border: 1px solid #eeeeee;
+      border-color: #eeeeee;
       background-color: #fff;
       border-radius: 4px;
-    }
-  }
-}
-.transaction {
-  display: flex;
-  margin-bottom: -40px;
-
-  &__item {
-    padding: 35px;
-    height: calc(100% - 40px);
-    margin-bottom: 40px;
-
-    &-head {
-      display: flex;
-      justify-content: space-between;
-      font-weight: 600;
-    }
-  }
-
-  &__info {
-    border: 1px solid #eeeeee;
-    background-color: #eeeeee;
-    border-radius: 30px;
-  }
-
-  &__list {
-    margin-left: -35px;
-    margin-right: -35px;
-    margin-bottom: -35px;
-
-    &-item {
-      display: flex;
-      justify-content: space-between;
-      font-size: 18px;
-      font-weight: 600;
-      height: 60px;
-      align-items: center;
-      padding-left: 35px;
-      padding-right: 35px;
-
-      &:nth-child(2n) {
-        background-color: #f4f4f4;
-      }
-      &:last-child {
-        border-radius: 0 0 30px 30px;
-      }
-    }
-  }
-
-  &__chart {
-    background-color: $color-primary;
-    color: #fff;
-    font-weight: 600;
-    min-height: 455px;
-    border-radius: 30px;
-
-    &-total {
-      font-size: 36px;
-    }
-    &-link {
-      &:hover {
-        color: $color-text;
-      }
     }
   }
 }

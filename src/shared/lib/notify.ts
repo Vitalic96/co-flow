@@ -5,13 +5,13 @@ export const notify = (text: string) => toast(text)
 export const notifySuccess = (text: string) => toast.success(text, { theme: 'colored' })
 export const notifyError = (text: string) => toast.error(text, { theme: 'colored' })
 
-export const notifyUnknown = (error: unknown) => notifyError(getErrorFromResponse(error))
+export const notifyUnknown = (error: unknown) => {
+  notifyError(getErrorFromResponse(error))
+}
 
 const getErrorFromResponse = (error: unknown): string => {
   const errorIsObject = error && typeof error === 'object'
-  if (!errorIsObject) {
-    return typeof error === 'string' ? error : 'Unknown error'
-  }
+  if (!errorIsObject) return typeof error === 'string' ? error : 'Unknown error'
   if (isErrorWithMessage(error)) return error.message
   const hasData = 'data' in error && error.data
   if (!hasData) return 'Unknown error'
@@ -19,5 +19,7 @@ const getErrorFromResponse = (error: unknown): string => {
   if (isErrorWithMessage(data)) return data.message
   const dataIsObject = data && typeof data === 'object'
 
-  return dataIsObject ? Object.values(data).join(', ') : 'Unknown error'
+  if (Array.isArray(data)) return data.map(getErrorFromResponse).join(', ')
+
+  return dataIsObject ? Object.values(data).join(', ') : typeof data === 'string' ? data : 'Unknown error'
 }

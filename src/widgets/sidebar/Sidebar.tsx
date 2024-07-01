@@ -5,10 +5,11 @@ import { PATH_PAGE } from 'shared/lib'
 import { Button } from 'shared/ui'
 import { Arrow, Home, Logout, Product } from 'shared/ui/icon'
 import { LogoutButton } from 'features/session/logout'
+import './Sidebar.scss'
 
 const menuList = [
   { to: PATH_PAGE.root, icon: Home, text: 'Home' },
-  { to: PATH_PAGE.products, icon: Product, text: 'Products' },
+  { to: PATH_PAGE.products.root, icon: Product, text: 'Products' },
 ]
 
 export const Sidebar = () => {

@@ -6,6 +6,7 @@ import { baseApi } from 'shared/api'
 import { rootReducer } from './root.reducer'
 import { invalidateAccessTokenListener } from 'features/session/invalidateAccessToken'
 import { sessionSlice } from 'entities/session'
+import { refreshTokensListener } from 'features/session/refresh-token'
 
 const persistConfig = {
   key: 'root',
@@ -21,7 +22,7 @@ export function makeStore() {
         serializableCheck: {
           ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
         },
-      }).concat(baseApi.middleware, invalidateAccessTokenListener.middleware),
+      }).concat(baseApi.middleware, invalidateAccessTokenListener.middleware, refreshTokensListener.middleware),
   })
 
   setupListeners(store.dispatch)

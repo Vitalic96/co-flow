@@ -66,18 +66,11 @@
     .input__input {
       border-color: $color-success;
     }
-
-    &::before {
-      // background-color: $color-success;
-    }
   }
 
   &--error {
     .input__input {
       border-color: $color-error !important;
-    }
-    &::before {
-      // background-color: $color-error;
     }
   }
 }

@@ -1,24 +1,33 @@
 import { useProductsQuery } from 'entities/product/api/product.api'
-import React from 'react'
-import { SectionTitle } from 'shared/ui'
+import { AiFillPlusCircle } from 'react-icons/ai'
+import { PATH_PAGE } from 'shared/lib'
+import { Link } from 'react-router-dom'
+import { ProductCard } from 'entities/product'
 
 export const ProductListPage = () => {
-  const { data: products } = useProductsQuery()
+  const { data: products = [], isLoading } = useProductsQuery()
+
+  const hasProducts = !isLoading && Boolean(products.length)
 
   return (
-    <section className='section product-list'>
+    <section className='section'>
       <div className='container-fluid'>
-        <SectionTitle>Digital product</SectionTitle>
-        <div className='product-items row'>
-          {products?.map((product) => {
-            return (
-              <div key={product.id} className='product-items__item col-lg-3 col-12'>
-                <h3 className='product-items__title'>{product.title}</h3>
-                <div className='product-items__descr'>{product.text}</div>
-              </div>
-            )
-          })}
-        </div>
+        <h2 className='section-title h3'>Digital product</h2>
+        {!hasProducts ? (
+          <div className='text-center'>
+            <h3 className='mb-30'>Nothing found</h3>
+          </div>
+        ) : (
+          <div className='items row row--m-10'>
+            {products.map((product) => {
+              return <ProductCard key={product.productId} product={product} />
+            })}
+          </div>
+        )}
+        <Link to={PATH_PAGE.products.createProduct} className='add-product-button mt-25'>
+          <AiFillPlusCircle />
+          Add product
+        </Link>
       </div>
     </section>
   )

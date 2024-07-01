@@ -1,0 +1,14 @@
+@import '/src/shared/styles/vars';
+@import '/src/shared/styles/mixin';
+
+.layout {
+  transition: all 0.3s;
+
+  &--with-sidebar {
+    padding-left: 340px;
+  }
+
+  &--dark {
+    background-color: $color-dark;
+  }
+}

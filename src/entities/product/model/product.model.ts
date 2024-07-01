@@ -1,7 +1,8 @@
 export type ProductId = string
 
 export type Product = {
-  id: ProductId
+  productId: ProductId
+  image: string
   title: string
   text: string
   price: number

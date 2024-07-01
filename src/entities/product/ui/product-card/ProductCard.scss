@@ -1,0 +1,139 @@
+@import '/src/shared/styles/vars';
+@import '/src/shared/styles/mixin';
+
+.product-card {
+  min-height: 258px;
+  border-radius: 16px;
+  position: relative;
+  color: #fff;
+  padding: 17px 25px;
+  font-weight: 600;
+  font-family: 'Raleway';
+
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    left: 10px;
+    bottom: 0;
+    background-size: cover;
+    border-radius: 16px;
+    z-index: -1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $color-dark;
+      opacity: 0.35;
+      z-index: 1;
+      border-radius: 16px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+      opacity: 0.2;
+      z-index: 1;
+      border-radius: 16px;
+    }
+  }
+  &__status {
+    position: absolute;
+    top: 17px;
+    left: 35px;
+    padding: 8px 18px 8px 18px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  &__actions {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    z-index: 3;
+
+    button {
+      color: #fff;
+      font-size: 27px;
+      margin-left: 10px;
+      transition: all 0.3s;
+
+      a {
+        color: #fff;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  &__content {
+    position: absolute;
+    bottom: 17px;
+    right: 25px;
+    left: 25px;
+  }
+  &__title {
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  &__price {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+  &__button {
+    padding: 8px 18px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
+.add-product-button {
+  padding: 20px;
+  background-color: #fbfbfb;
+  border: 1px solid #eee;
+  display: block;
+  width: 100%;
+  color: $color-primary;
+  font-weight: 600;
+  font-family: 'Raleway';
+  text-align: center;
+  border-radius: 16px;
+  font-size: 16px;
+  transition: all 0.3s;
+  position: relative;
+  top: 0;
+
+  &:hover {
+    border-color: $color-primary;
+  }
+
+  &:active {
+    top: 2px;
+  }
+
+  svg {
+    display: block;
+    font-size: 32px;
+    margin: 0 auto 5px;
+  }
+}

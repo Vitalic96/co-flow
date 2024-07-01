@@ -1,0 +1,33 @@
+@import '/src/shared/styles/vars';
+@import '/src/shared/styles/mixin';
+
+.numbers-items {
+  &__item {
+    padding: 30px 30px + 15px;
+    border-radius: 20px;
+  }
+
+  &__bg {
+    background-color: #fbfbfb;
+    border: 1px solid #eeeeee;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    font-family: 'Raleway';
+  }
+
+  &__number {
+    font-size: 46px;
+    line-height: 1;
+    color: $color-primary;
+    font-weight: 600;
+    font-family: 'Raleway';
+  }
+
+  &__info {
+    margin-top: 10px;
+  }
+}

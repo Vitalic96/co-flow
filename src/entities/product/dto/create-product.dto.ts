@@ -1,3 +1,3 @@
-export type CreatePostDto = {
+export type CreateProductDto = {
   body: FormData
 }

@@ -6,7 +6,7 @@
   width: 100%;
   position: relative;
   border-radius: inherit;
-  background-color: $color-placeholder;
+  background-color: $color-input;
 
   &::before,
   &::after {
@@ -46,8 +46,6 @@
 }
 
 .image {
-  background-color: $color-input;
-
   &--radius {
     border-radius: 5px;
   }

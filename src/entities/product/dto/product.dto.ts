@@ -1,5 +1,6 @@
 export type ProductDto = {
-  id: string
+  productId: string
+  image: string
   title: string
   text: string
   price: number

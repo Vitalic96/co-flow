@@ -1,0 +1,93 @@
+@import '/src/shared/styles/vars';
+@import '/src/shared/styles/mixin';
+
+.transaction {
+  display: flex;
+  margin-bottom: -40px;
+
+  &__item {
+    padding: 35px;
+    height: calc(100% - 40px);
+    margin-bottom: 40px;
+
+    &--info {
+      border: 1px solid #eeeeee;
+      border-radius: 30px;
+    }
+
+    &--chart {
+      background-color: $color-primary;
+      color: #fff;
+      font-weight: 600;
+      min-height: 455px;
+      border-radius: 30px;
+    }
+
+    &-head {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+    }
+    &-title {
+      font-weight: 600;
+      font-family: 'Raleway';
+    }
+
+    &-total {
+      font-size: 36px;
+      font-family: 'Raleway';
+    }
+    &-link {
+      font-family: 'Raleway';
+      &:hover {
+        color: #fff;
+        opacity: 0.8;
+      }
+    }
+    &-chart {
+      margin-left: -50px;
+      margin-right: -50px;
+    }
+    &-chart-bottom {
+      height: 250px;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-radius: 0 0 30px 30px;
+    background-color: #f4f4f4;
+
+    &-wrapper {
+      margin-left: -35px;
+      margin-right: -35px;
+      margin-bottom: -35px;
+      margin-top: 10px;
+      max-height: 400px;
+      overflow-y: scroll;
+    }
+
+    &-tr {
+      font-size: 18px;
+      font-weight: 600;
+      height: 60px;
+      padding-left: 35px;
+      padding-right: 35px;
+
+      &:nth-child(2n + 1) {
+        background-color: #fff;
+      }
+    }
+    &-td {
+      vertical-align: middle;
+      padding: 5px 10px;
+      width: 33%;
+      &:first-child {
+        padding-left: 35px;
+      }
+      &:last-child {
+        padding-left: 35px;
+      }
+    }
+  }
+}

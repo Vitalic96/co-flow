@@ -5,16 +5,19 @@ type SessionSliceState =
   | {
       isAuth: true
       accessToken: string
+      refreshToken: string
     }
   | {
       isAuth: false
       accessToken: null
+      refreshToken: null
     }
 
-const initialState: SessionSliceState = {
+const initialState = {
   isAuth: false,
   accessToken: null,
-}
+  refreshToken: null,
+} as const
 
 export const sessionSlice = createSlice({
   name: 'session',
@@ -23,31 +26,25 @@ export const sessionSlice = createSlice({
     clearSessionData: (state) => {
       state.isAuth = initialState.isAuth
       state.accessToken = initialState.accessToken
+      state.refreshToken = initialState.refreshToken
     },
     setSessionData: (state, action: PayloadAction<SessionSliceState>) => {
       state.isAuth = action.payload.isAuth
       state.accessToken = action.payload.accessToken
+      state.refreshToken = action.payload.refreshToken
     },
   },
   extraReducers: (builder) => {
-    builder.addMatcher(
-      isAnyOf(sessionApi.endpoints.signIn.matchFulfilled, sessionApi.endpoints.signUp.matchFulfilled),
-      (state: SessionSliceState, { payload }) => {
-        const newState: SessionSliceState = {
-          isAuth: true,
-          accessToken: payload.accessToken,
-        }
-        state.isAuth = state.isAuth = newState.isAuth
-        state.accessToken = newState.accessToken
-      },
-    )
-    builder.addMatcher(
-      isAnyOf(sessionApi.endpoints.signIn.matchRejected, sessionApi.endpoints.signUp.matchRejected),
-      (state: SessionSliceState, { payload }) => {
-        state.isAuth = false
-        state.accessToken = null
-      },
-    )
+    builder.addMatcher(isAnyOf(sessionApi.endpoints.login.matchFulfilled), (state: SessionSliceState, { payload }) => {
+      const newState: SessionSliceState = {
+        isAuth: true,
+        accessToken: payload.accessToken,
+        refreshToken: payload.refreshToken,
+      }
+      state.isAuth = newState.isAuth
+      state.refreshToken = newState.refreshToken
+      state.accessToken = newState.accessToken
+    })
   },
 })
 

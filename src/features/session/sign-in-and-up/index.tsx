@@ -1,5 +1,2 @@
-// export { useSignInPopup } from './lib/use-sign-in-popup'
-// export { useCheckAuth } from './lib/use-check-auth'
-export { SignInForm } from './ui/SignInForm'
-export { SignUpForm } from './ui/SignUpForm'
-// export { SignInAndUpTabs } from './ui/SignInAndUpTabs'
+export { LoginForm } from './ui/LoginForm'
+export { RegisterForm } from './ui/RegisterForm'

@@ -11,7 +11,7 @@ export type Props = {
 export const GuestGuard = ({ children }: Props): ReactElement => {
   const isAuth = useAppSelector(selectIsAuth)
 
-  if (!isAuth) return <Navigate to={PATH_PAGE.signUp} replace />
+  if (!isAuth) return <Navigate to={PATH_PAGE.login} replace />
 
   return children
 }

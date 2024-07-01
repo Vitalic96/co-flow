@@ -1,0 +1,21 @@
+@import '/src/shared/styles/vars';
+@import '/src/shared/styles/mixin';
+
+.logout-button {
+  &__link {
+    cursor: pointer;
+    color: $color-dangerous;
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 30px;
+    position: relative;
+    top: -1px;
+  }
+}

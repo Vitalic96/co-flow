@@ -15,7 +15,21 @@ export async function baseWithReauthQuery(
   const result = await baseQuery(args, api, extraOptions)
 
   if (result.error && typeof result.error?.status === 'number' && AUTH_ERROR_CODES.has(result.error.status)) {
-    api.dispatch(invalidateAccessToken())
+    const refreshToken = (api.getState() as RootState).session.refreshToken
+
+    const refreshResult = await baseQuery(
+      { url: '/users/refresh-token', body: { refreshToken }, method: 'POST' },
+      api,
+      extraOptions,
+    )
+    if (refreshResult.data) {
+      const response = refreshResult.data as { accessToken: string; refreshToken: string }
+      api.dispatch(refreshTokens(response))
+
+      return await baseQuery(args, api, extraOptions)
+    } else {
+      api.dispatch(invalidateAccessToken())
+    }
   }
 
   return result

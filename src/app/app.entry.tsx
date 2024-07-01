@@ -5,25 +5,23 @@ import { ToastContainer } from 'react-toastify'
 import { appStore, persistedStore } from './app.store'
 import { Provider as ReduxProvider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
-import { setupWorker } from 'msw/browser'
-import { handlers } from './mock/handlers'
+import { worker } from './mock/browser'
+import { Provider as ModalProvider } from '@ebay/nice-modal-react'
 import 'react-toastify/dist/ReactToastify.css'
 
 const root = document.getElementById('root') as HTMLElement
 
-export const worker = setupWorker(...handlers)
+const start = async () => await worker.start({ onUnhandledRequest: 'bypass', quiet: true })
 
-const start = async () => await worker.start()
-
-start().then(() => {
+start().then(async () => {
   createRoot(root).render(
     <ReduxProvider store={appStore}>
-      {/* <ModalProvider> */}
-      <PersistGate loading={null} persistor={persistedStore}>
-        <RouterProvider router={appRouter()} />
-        <ToastContainer />
-      </PersistGate>
-      {/* </ModalProvider> */}
+      <ModalProvider>
+        <PersistGate loading={null} persistor={persistedStore}>
+          <RouterProvider router={appRouter()} />
+          <ToastContainer position='bottom-right' />
+        </PersistGate>
+      </ModalProvider>
     </ReduxProvider>,
   )
 })

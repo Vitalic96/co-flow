@@ -1,6 +1,7 @@
 export { ErrorPage } from './error-page/ErrorPage'
 export { MainPage } from './main-page/MainPage'
 export { NotFoundPage } from './not-found-page/NotFoundPage'
-export { SignInPage } from './sign-in-page/SignInPage'
+export { RegisterPage as SignInPage } from './register-page/RegisterPage'
 export { ProductPage } from './product-page/ProductPage'
 export { ProductListPage } from './product-list-page/ProductListPage'
+export { CreateProductPage } from './product-editor-page/CreateProductPage'

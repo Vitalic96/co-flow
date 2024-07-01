@@ -1,5 +1,6 @@
 export const sessionRoutes = {
-  LOGIN: '/login',
-  LOGOUT: '/logout',
-  REGISTER: '/register',
+  LOGIN: '/users/login',
+  REGISTER: '/users/register',
+  LOGOUT: '/users/logout',
+  REFRESH_TOKEN: '/users/refresh-token',
 }

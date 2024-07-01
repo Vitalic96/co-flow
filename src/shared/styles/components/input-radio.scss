@@ -2,7 +2,10 @@
   position: relative;
   display: block;
   cursor: pointer;
-  margin-bottom: 10px;
+  width: 52px;
+  height: 26px;
+  border-radius: 48px;
+  background-color: #e2e2e2;
 
   &__input {
     position: absolute;
@@ -13,72 +16,22 @@
     display: block;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    border: 1px solid $color-primary;
+    bottom: 0;
+    margin: auto;
+    left: 14px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    transition: border 0.3s;
+    transition: all 0.3s;
+    background-color: #fff;
     z-index: 3;
-
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 10px;
-      height: 10px;
-      margin: auto;
-      border-radius: inherit;
-      transition: opacity 0.3s;
-    }
-
-    &::before {
-    }
-
-    &::after {
-      opacity: 0;
-      background-color: $color-primary;
-    }
-  }
-
-  &__label {
-    display: block;
-    text-align: left;
-    min-height: 20px;
-    padding-left: 30px;
-    line-height: 1.2;
-    transition: background-color 0.3s, color 0.3s;
+    transform: translate(-50%, 0);
   }
 }
 
 .input-radio {
-  &__input:checked ~ .input-radio__bg {
-    border-color: $color-primary;
-  }
-
   &__input:checked ~ .input-radio__check {
-    &::before {
-      opacity: 0;
-    }
-
-    &::after {
-      opacity: 1;
-    }
-  }
-
-  &__input:focus ~ .input-radio__check {
-    box-shadow: 0 0 0 0.1px $color-primary, 0 0 0 0.2px $color-primary-hover;
-  }
-
-  &__input:disabled ~ .input-radio__check {
-    box-shadow: 0 0 0 2px $color-disabled;
-  }
-
-  &__input:checked:disabled ~ .input-radio__check {
-    background-color: $color-disabled;
+    background-color: $color-dark;
+    left: calc(100% - 14px);
   }
 }

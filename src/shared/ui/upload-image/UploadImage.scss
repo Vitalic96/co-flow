@@ -4,19 +4,18 @@
 .upload-image {
   margin-bottom: $input-mb;
   &__main {
-    display: flex;
-    align-items: center;
   }
 
   &__image {
     margin-right: 20px;
-    width: 130px;
+    width: 100%;
     border: 1px solid $color-primary;
     position: relative;
     background-color: #fff;
+    border-radius: 15px;
 
     &::before {
-      padding-top: 100%;
+      padding-top: 70%;
     }
 
     &-empty {
@@ -29,7 +28,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      font-size: 12px;
+      font-size: 14px;
     }
 
     input {
@@ -42,11 +41,19 @@
       opacity: 0;
     }
   }
+  &__content {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
   &__buttons {
-    width: 100%;
     display: flex;
     align-items: center;
     column-gap: 20px;
+  }
+  &__info {
+    color: rgba($color-text, 0.3);
+    margin-left: 30px;
   }
   &__error {
     margin-top: 10px;

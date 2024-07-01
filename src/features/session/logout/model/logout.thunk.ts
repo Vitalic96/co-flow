@@ -9,7 +9,8 @@ export const logoutThunk = createAsyncThunk<void, void, { state: RootState }>(
   async (_: unknown, { dispatch, getState }) => {
     try {
       const state = getState()
-      if (state.session.isAuth) await dispatch(sessionApi.endpoints.logout.initiate()).unwrap()
+      if (state.session.isAuth)
+        await dispatch(sessionApi.endpoints.logout.initiate({ refreshToken: state.session.refreshToken })).unwrap()
     } finally {
       dispatch(clearSessionData())
 

@@ -3,7 +3,8 @@ import { Product } from '../model/product.model'
 
 export const productMapper = (dto: ProductDto): Product => {
   return {
-    id: dto.id,
+    productId: dto.productId,
+    image: dto.image,
     title: dto.title,
     text: dto.text,
     price: dto.price,

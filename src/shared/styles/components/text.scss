@@ -17,12 +17,6 @@
   color: $color-secondary;
 }
 
-.text-btn {
-}
-
-.text-icon {
-}
-
 .text-link {
   border-bottom: 1px solid transparent;
   transition: color 0.3s, border-color 0.3s;
@@ -31,18 +25,4 @@
     color: $color-primary;
     border-color: $color-primary;
   }
-
-  // &.text-underline {
-  //   text-decoration: none;
-  //   border-color: inherit;
-  //   padding-bottom: 5px;
-
-  //   &.text-primary {
-  //     border-color: $color-primary;
-  //   }
-
-  //   &.text-secondary {
-  //     border-color: $color-secondary;
-  //   }
-  // }
 }

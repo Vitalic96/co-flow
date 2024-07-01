@@ -8,7 +8,5 @@ export { loadImage } from './load-image'
 export { notify, notifyError, notifySuccess, notifyUnknown } from './notify'
 export { objectToFormData } from './object-to-form-data'
 export { onlyDigits } from './only-digits'
-
 export { PATH_PAGE } from './paths'
-// export { scrollToBlock, onScrollToBlock } from './scroll-to-block'
 export { wait } from './wait'
